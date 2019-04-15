@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<body>
+    <!-- <h1 [hidden]="hideTitle" [ngClass]="classList">
+        Welcome to {{ title }}! {{ age }}
+      </h1>
+      <button class="header" (click)="toggleHeader()">show header?</button> -->
+
+  <section>
+    <h1>ToDo List</h1>
+    <p class="subTitle">A place to store the things you have to do!</p>
+    <input [(ngModel)]="searchBox" placeholder="Filter your to-dos"/>
+ 
+  <!-- <div class="line"> -->
+    <ol>
+      <li *ngFor="let ToDo of choreList let i = index">
+        <button class="complete" *ngIf="completeClick" (click)="completeTask(i)">Complete</button> 
+        
+        <p [ngClass]="{stylesList: ToDo.complete}">{{ ToDo.chore }}</p>
+
+        <button class="remove" (click)="removeTask(i)">X</button>
+      </li>
+    </ol>
+  <!-- </div> -->
+
+
+    <input type="text" placeholder="Add your to do" [(ngModel)]="choreInput"/>
+
+      <button (click)="addTask()">Add </button>
+  </section>  
+  
+</body>
+<router-outlet></router-outlet>
