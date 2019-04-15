@@ -8,10 +8,11 @@
   <section>
     <h1>ToDo List</h1>
     <p class="subTitle">A place to store the things you have to do!</p>
-    <input [(ngModel)]="searchBox" placeholder="Filter your to-dos"/>
+    <input type="text" (input)="filterToDos()" [(ngModel)]="filterText" placeholder="Filter your to-dos"/> 
  
   <!-- <div class="line"> -->
     <ol>
+    <!-- <input type="text" (input)="filterToDos()" [(ngModel)]="filterText" /> -->
       <li *ngFor="let ToDo of choreList let i = index">
         <button class="complete" *ngIf="completeClick" (click)="completeTask(i)">Complete</button> 
         

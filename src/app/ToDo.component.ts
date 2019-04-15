@@ -16,6 +16,8 @@ export class AppComponent {
   choreInput: string;
   completeClick: boolean= true;
   stylesList: boolean= true;
+  filterText: string;
+  ToDo: string;
 
 
  choreList: ToDo[] =  [
@@ -24,6 +26,8 @@ export class AppComponent {
     {chore: 'Cook and eat breakfast', complete: true},
     {chore: 'Go to work', complete: false},
   ];
+
+  // filteredToDos = [...this.ToDos];
 
   addTask = () => {
     const newChore = {
@@ -52,8 +56,14 @@ removeTask = (index) =>  {
   // this.choreInput = null;
 };
 
-togglestylesList= () => {
-   stylesList = !stylesList;
-}
+// togglestylesList= () => {
+//    stylesList = !stylesList;
+// }
+filterToDos = () => {
+  this.filterToDos = this.filterToDos.filter(todo =>
+    todo.name.includes(this.filterText)
+  );
+  };
+
 
 }
